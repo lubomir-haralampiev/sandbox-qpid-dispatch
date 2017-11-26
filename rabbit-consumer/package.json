@@ -1,0 +1,15 @@
+{
+  "name": "rabbit-consumer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "amqplib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "rhea": "^0.2.6"
+  }
+}

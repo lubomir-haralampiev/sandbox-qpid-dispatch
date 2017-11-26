@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+    router:
+        build:
+            context: .
+            dockerfile: Dockerfile-ubuntu
+        ports:
+            - 5672:5672
+        links:
+            - rabbitmq
+        volumes:
+            - ./router:/custom-config
+
+    rabbitmq:
+        # image: rabbitmq:3.6.14-management
+        build:
+            context: .
+            dockerfile: Dockerfile-rabbitmq
+        ports:
+            # - 5672:5672
+            - 15672:15672

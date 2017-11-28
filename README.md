@@ -32,7 +32,7 @@ The login credentials are admin/admin.
 The first Artemis now has a queue named 'telemetry' with one message in it.
 * run ```node amqp-producer/produce-events.js```.  
 The second Artemis now has a queue named 'events' with one message in it.
-* Dummy consumer which just print the messages to the console are ```node amqp-consumer/consume-telemetry.js``` and ```node amqp-consumer/consume-events.js```
+* Dummy consumers which just print the messages to the console are ```node amqp-consumer/consume-telemetry.js``` and ```node amqp-consumer/consume-events.js```
 
 ### TODOs
 * Place the node.js modules in a docker container to be able to run the examples without having node.js installed

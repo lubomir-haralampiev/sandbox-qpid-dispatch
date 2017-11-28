@@ -26,8 +26,13 @@ To run it you need *docker*, *docker-composer* and *node.js* version 8.
 
 * run ```docker-compose up``` to start the Qpid Dispatch Router and the two Artemis instances. 
 The two Artemis consoles are located under <http://localhost:18161/console> and <http://localhost:28161/console>.
-The login credentials are admin/admin. 
+The login credentials are admin/admin.
+* Install the npm dependencies in the two modules amqp-producer and amqp-consumer.
 * run ```node amqp-producer/produce-telemetry.js```.  
 The first Artemis now has a queue named 'telemetry' with one message in it.
 * run ```node amqp-producer/produce-events.js```.  
 The second Artemis now has a queue named 'events' with one message in it.
+* Dummy consumer which just print the messages to the console are ```node amqp-consumer/consume-telemetry.js``` and ```node amqp-consumer/consume-events.js```
+
+### TODOs
+* Place the node.js modules in a docker container to be able to run the examples without having node.js installed

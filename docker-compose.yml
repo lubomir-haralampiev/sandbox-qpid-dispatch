@@ -8,21 +8,23 @@ services:
         ports:
             - 5672:5672
         links:
-            - rabbitmq-1
-            - rabbitmq-2
+            - artemis-1
+            - artemis-2
         volumes:
             - ./router:/custom-config
 
-    rabbitmq-1:
-        build:
-            context: .
-            dockerfile: Dockerfile-rabbitmq
+    artemis-1:
+        image: vromero/activemq-artemis:2.3.0
         ports:
-            - 15672:15672
+          - 18161:8161
+        environment:
+          ARTEMIS_USERNAME: admin
+          ARTEMIS_PASSWORD: admin
 
-    rabbitmq-2:
-        build:
-            context: .
-            dockerfile: Dockerfile-rabbitmq
+    artemis-2:
+        image: vromero/activemq-artemis:2.3.0
         ports:
-            - 25672:15672
+          - 28161:8161
+        environment:
+          ARTEMIS_USERNAME: admin
+          ARTEMIS_PASSWORD: admin

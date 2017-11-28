@@ -6,7 +6,7 @@ if you use a single broker instance, just like the problem with the vertical sca
 
 The [Eclipse Hono](https://www.eclipse.org/hono/) project deals with this topic(amongst some other things). 
 The basic idea is to use a router which doesn't take any responsibility for the messages, 
-instead it just routes them to the responsible components.
+instead it just routes them to the responsible components.  
 Based on rules the messages are delivered to message brokers, directly to a corresponding application 
 or to another router with own routing logic.
 
@@ -27,5 +27,7 @@ To run it you need *docker*, *docker-composer* and *node.js* version 8.
 * run ```docker-compose up``` to start the Qpid Dispatch Router and the two Artemis instances. 
 The two Artemis consoles are located under <http://localhost:18161/console> and <http://localhost:28161/console>.
 The login credentials are admin/admin. 
-* run ```node amqp-producer/produce-telemetry.js```. The first Artemis now has a queue named 'telemetry' with one message in it.
-* run ```node amqp-producer/produce-events.js```. The second Artemis now has a queue named 'events' with one message in it.
+* run ```node amqp-producer/produce-telemetry.js```.  
+The first Artemis now has a queue named 'telemetry' with one message in it.
+* run ```node amqp-producer/produce-events.js```.  
+The second Artemis now has a queue named 'events' with one message in it.

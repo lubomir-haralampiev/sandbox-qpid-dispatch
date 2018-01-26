@@ -36,3 +36,17 @@ The second Artemis now has a queue named 'events' with one message in it.
 
 ### TODOs
 * Place the node.js modules in a docker container to be able to run the examples without having node.js installed
+
+### Important Notes
+AMQP 1.0 is primary and only a messaging protocol, means it focuses only on the messaging layer. 
+Messages are published/consumed only to/from addresses. All the message routing logic is part of the concrete broker.
+
+ActiveMQ Artemis has the MULTICAST and ANYCAST routing types which can model the JMS concepts of topics and queues.
+
+RabbitMQ has a naming convention for the AMQP 1.0 address, which is internally mapped to the corresponding exchanges direct, topic, fanout or to queues
+
+This means an application can not declare topics/queues/exchanges over a pure AMQP 1.0 communication. 
+Instead the Client/API of the concrete broker must be used. 
+
+In the current example this means that we can't create queues and delivery logic vie the grs/rhea lib!
+This must be done either in the Artemis configuration(disadvantage = application logic in the broker) or another client must be used. 

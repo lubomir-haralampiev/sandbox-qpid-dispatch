@@ -23,7 +23,6 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib"
-    compile "org.apache.activemq:artemis-jms-client-all:2.4.0"
 }
 
 jar {

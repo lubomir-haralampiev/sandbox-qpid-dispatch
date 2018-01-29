@@ -1,4 +1,15 @@
 
+import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory
+import org.apache.qpid.jms.JmsConnectionFactory
+import org.apache.qpid.jms.JmsSession
+import javax.jms.*
+import javax.jms.MessageConsumer
+
+
+
+
+
+/*
 import org.apache.activemq.artemis.api.core.RoutingType
 import org.apache.activemq.artemis.api.core.TransportConfiguration
 import org.apache.activemq.artemis.api.core.client.*
@@ -38,5 +49,29 @@ fun main(args: Array<String>) {
 
     session.close()
 //    println(args)
+    println("666")
+}
+*/
+
+fun main(args: Array<String>) {
+    val connectionFactory = JmsConnectionFactory("admin", "admin", "amqp://127.0.0.1:5672")
+
+    val connection = connectionFactory.createConnection()
+//    // println("connection class" + connection::class)
+//
+    val session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)
+    println("connection class " + session::class)
+
+
+    // Don't know how to create MULTICAST addresses and if it's possible with AMQP or which client should I use ?!?!
+
+//    val topic = session.createTopic("topic.t-0")
+//    val producer = session.createProducer(topic)
+
+//    val queue = session.createQueue("exampleQueue")
+//    val consumer = session.createConsumer(queue)
+
+    connection.close()
+
     println("666")
 }

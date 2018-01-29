@@ -24,8 +24,18 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib"
 
-    // https://mvnrepository.com/artifact/org.apache.activemq/artemis-core-client
-    compile group: 'org.apache.activemq', name: 'artemis-core-client', version: '2.4.0'
+//    // https://mvnrepository.com/artifact/org.apache.activemq/artemis-core-client
+//    compile group: 'org.apache.activemq', name: 'artemis-core-client', version: '2.4.0'
+
+    // https://mvnrepository.com/artifact/org.apache.activemq/artemis-jms-client
+    compile group: 'org.apache.activemq', name: 'artemis-jms-client', version: '2.4.0'
+
+    // https://mvnrepository.com/artifact/org.apache.qpid/qpid-jms-client
+    compile group: 'org.apache.qpid', name: 'qpid-jms-client', version: '0.29.0'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+
 }
 
 jar {

@@ -65,6 +65,9 @@ fun main(args: Array<String>) {
 
     // Don't know how to create MULTICAST addresses and if it's possible with AMQP or which client should I use ?!?!
 
+    // another examples
+    // https://github.com/apache/qpid-jms/tree/0.28.0/qpid-jms-examples/src/main/java/org/apache/qpid/jms/example
+
 //    val topic = session.createTopic("topic.t-0")
 //    val producer = session.createProducer(topic)
 

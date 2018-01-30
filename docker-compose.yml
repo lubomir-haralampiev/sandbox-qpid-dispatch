@@ -13,8 +13,10 @@ services:
         volumes:
             - ./router:/custom-config
 
+    # Attention: The 2.3.0 version has the strange behaviour
+    # that topics can not be created from on the client side!
     artemis-1:
-        image: vromero/activemq-artemis:2.3.0
+        image: vromero/activemq-artemis:2.4.0
         ports:
           - 18161:8161
         environment:
@@ -22,7 +24,7 @@ services:
           ARTEMIS_PASSWORD: admin
 
     artemis-2:
-        image: vromero/activemq-artemis:2.3.0
+        image: vromero/activemq-artemis:2.4.0
         ports:
           - 28161:8161
         environment:

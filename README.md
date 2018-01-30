@@ -48,5 +48,5 @@ RabbitMQ has a naming convention for the AMQP 1.0 address, which is internally m
 This means an application can not declare topics/queues/exchanges over a pure AMQP 1.0 communication. 
 Instead the Client/API of the concrete broker must be used. 
 
-In the current example this means that we can't create queues and delivery logic vie the grs/rhea lib!
+In the current example this means that we can't create queues and delivery logic via the grs/rhea lib!
 This must be done either in the Artemis configuration(disadvantage = application logic in the broker) or another client must be used. 
